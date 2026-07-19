@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AmirWebWorks — Web, Scripts & AI. Same-day, Toronto.</title>
+<meta name="description" content="Demo portfolio: landing pages, data-cleanup scripts and WooCommerce speed-ups. Built same-day in Toronto.">
+<style>
+  :root { --bg:#0C1220; --bg2:#101A2A; --card:#121C2C; --line:rgba(217,164,65,.28); --gold:#D9A441; --ink:#F4F6F9; --muted:#93A1B4; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,'Segoe UI',Roboto,'Liberation Sans',Arial,sans-serif;
+    background:radial-gradient(ellipse 900px 500px at 85% -10%, #1B2A3E 0%, rgba(27,42,62,0) 60%), linear-gradient(160deg,#101A2A 0%,#0C1220 55%,#0A0F1A 100%);
+    color:var(--ink); min-height:100vh; line-height:1.6; }
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  header { padding:72px 0 48px; }
+  .brand { display:flex; align-items:center; gap:16px; }
+  .mono { width:56px; height:56px; border:2px solid var(--gold); border-radius:14px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:23px; color:var(--gold); }
+  .brand h1 { font-size:34px; letter-spacing:-.3px; }
+  .brand h1 span { color:var(--gold); }
+  .tag { margin-top:18px; font-size:19px; color:var(--muted); max-width:600px; }
+  .tag b { color:var(--ink); }
+  .badge { display:inline-block; margin-top:22px; border:1.5px solid var(--gold); border-radius:999px; padding:9px 22px; font-size:14px; font-weight:700; letter-spacing:2.5px; color:var(--gold); }
+  .cards { display:grid; grid-template-columns:1fr; gap:18px; padding-bottom:40px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:30px 32px; display:flex; gap:24px; align-items:flex-start; transition:transform .12s ease, border-color .12s ease; }
+  .card:hover { transform:translateY(-2px); border-color:var(--gold); }
+  .card .ico { flex:0 0 auto; width:54px; height:54px; border-radius:13px; background:rgba(217,164,65,.08); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; }
+  .card h2 { font-size:21px; }
+  .card p { margin-top:8px; font-size:15px; color:var(--muted); }
+  .links { margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; }
+  .lbtn { display:inline-block; font-size:13.5px; font-weight:700; border-radius:9px; padding:9px 16px; }
+  .lbtn.primary { background:var(--gold); color:#20242B; }
+  .lbtn.ghost { border:1.5px solid var(--line); color:var(--gold); }
+  .lbtn.ghost:hover { border-color:var(--gold); }
+  .note { font-size:12.5px; color:var(--muted); margin-top:12px; }
+  footer { border-top:1px solid rgba(255,255,255,.09); padding:30px 0 44px; font-size:13.5px; color:var(--muted); }
+  footer b { color:var(--ink); }
+  @media (max-width:640px){ .card { flex-direction:column; } header { padding:52px 0 36px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="mono">AW</div>
+      <h1><span>Amir</span>WebWorks</h1>
+    </div>
+    <p class="tag"><b>Web &bull; Scripts &bull; AI.</b> Fast, clean work for small business — built and delivered the same day. Below are live demo builds: real, working, honest — no invented client logos.</p>
+    <div class="badge">SAME-DAY &nbsp;&bull;&nbsp; TORONTO</div>
+  </header>
+
+  <div class="cards">
+    <div class="card">
+      <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2.5" stroke="#D9A441" stroke-width="2"/><path d="M2 9h20" stroke="#D9A441" stroke-width="2"/><circle cx="5.5" cy="6.5" r="1" fill="#D9A441"/><circle cx="8.5" cy="6.5" r="1" fill="#D9A441"/></svg></div>
+      <div>
+        <h2>Landing page — local service business</h2>
+        <p>A complete one-page site for a fictional Toronto plumbing company: hero, services, reviews, callback form, mobile-ready. Single HTML file, no frameworks, loads instantly. This is the level every client page ships at.</p>
+        <div class="links">
+          <a class="lbtn primary" href="landing-northpipe/">View live demo &rarr;</a>
+        </div>
+        <div class="note">Clearly marked as a demo build in the footer — the business is fictional.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 5h16M4 12h16M4 19h10" stroke="#D9A441" stroke-width="2" stroke-linecap="round"/><path d="m17 17 2 2 3.5-4" stroke="#D9A441" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div>
+        <h2>CSV cleanup script — before / after</h2>
+        <p>One Python script turns a messy customer export (duplicates, mixed phone &amp; date formats, stray spaces) into clean, deduplicated data. 25 rows in &rarr; 17 clean rows out, 82 cells fixed — see it yourself.</p>
+        <div class="links">
+          <a class="lbtn primary" href="csv-cleanup/">See the demo &rarr;</a>
+        </div>
+        <div class="note">Standard library only — runs anywhere Python runs. Demo data is fictional.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="#D9A441" stroke-width="2" stroke-linejoin="round"/></svg></div>
+      <div>
+        <h2>WooCommerce performance checklist</h2>
+        <p>A free one-page PDF: 18 fixes that make a slow WooCommerce store fast, with Core Web Vitals targets. Use it yourself — or send me your store URL for a free 15-minute diagnosis.</p>
+        <div class="links">
+          <a class="lbtn primary" href="woocommerce-checklist/amirwebworks-woocommerce-performance-checklist.pdf">Open the PDF &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <b>AmirWebWorks</b> &middot; Toronto, ON &middot; Web fixes, landing pages, scripts &amp; automation — same-day.<br>
+    All demos on this page are honest demo builds: fictional businesses and generated data, clearly marked as such.
+  </footer>
+</div>
+</body>
+</html>
