@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSV Cleanup Demo — AmirWebWorks</title>
+<style>
+  :root { --bg:#0C1220; --card:#121C2C; --line:rgba(217,164,65,.28); --gold:#D9A441; --ink:#F4F6F9; --muted:#93A1B4; --bad:#E06C6C; --good:#5BE38A; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,'Segoe UI',Roboto,'Liberation Sans',Arial,sans-serif;
+    background:radial-gradient(ellipse 900px 500px at 85% -10%, #1B2A3E 0%, rgba(27,42,62,0) 60%), linear-gradient(160deg,#101A2A 0%,#0C1220 55%,#0A0F1A 100%);
+    color:var(--ink); min-height:100vh; line-height:1.6; padding-bottom:60px; }
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  .back { display:inline-block; margin-top:34px; font-size:14px; color:var(--muted); }
+  .back:hover { color:var(--gold); }
+  h1 { margin-top:18px; font-size:32px; letter-spacing:-.3px; }
+  h1 span { color:var(--gold); }
+  .lead { margin-top:12px; font-size:17px; color:var(--muted); max-width:640px; }
+  .stats { display:flex; gap:14px; margin-top:28px; flex-wrap:wrap; }
+  .stat { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 22px; text-align:center; }
+  .stat .v { font-size:24px; font-weight:800; color:var(--gold); }
+  .stat .k { font-size:12px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-top:2px; }
+  h2 { margin-top:40px; font-size:20px; }
+  .compare { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
+  .pane { background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  .pane .cap { padding:10px 16px; font-size:12.5px; font-weight:700; letter-spacing:2px; text-transform:uppercase; }
+  .pane.bad .cap { color:var(--bad); border-bottom:1px solid rgba(224,108,108,.3); }
+  .pane.good .cap { color:var(--good); border-bottom:1px solid rgba(91,227,138,.3); }
+  pre { padding:14px 16px; font-family:'DejaVu Sans Mono','Liberation Mono',monospace; font-size:11.5px; line-height:1.7; color:#C9D8E6; overflow-x:auto; }
+  .dl { display:flex; gap:12px; margin-top:20px; flex-wrap:wrap; }
+  .lbtn { display:inline-block; font-size:13.5px; font-weight:700; border-radius:9px; padding:10px 18px; }
+  .lbtn.primary { background:var(--gold); color:#20242B; }
+  .lbtn.ghost { border:1.5px solid var(--line); color:var(--gold); }
+  .lbtn.ghost:hover { border-color:var(--gold); }
+  .note { margin-top:26px; font-size:13px; color:var(--muted); border-top:1px solid rgba(255,255,255,.09); padding-top:18px; }
+  @media (max-width:760px){ .compare { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../">&larr; AmirWebWorks demos</a>
+  <h1>CSV Cleanup — <span>before / after</span></h1>
+  <p class="lead">One Python script, one pass: trims junk spacing, normalizes emails, phones, dates and money, drops empty rows and removes duplicate customers. Fictional demo data.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">25 &rarr; 17</div><div class="k">rows in &rarr; out</div></div>
+    <div class="stat"><div class="v">6</div><div class="k">duplicates removed</div></div>
+    <div class="stat"><div class="v">82</div><div class="k">cells fixed</div></div>
+    <div class="stat"><div class="v">0</div><div class="k">libraries needed</div></div>
+  </div>
+
+  <h2>Same customer, three ways — becomes one clean row</h2>
+  <div class="compare">
+    <div class="pane bad">
+      <div class="cap">before.csv</div>
+      <pre>  John Smith ,john.smith@gmail.com,
+    416-555-0182,Toronto,2026-07-03,$1240.50
+john smith,John.SMITH@Gmail.com,
+    (416) 555-0182,TORONTO,July 3 2026,"$1,240.50"
+JOHN SMITH,JOHN.smith@GMAIL.com,
+    4165550182,toronto,07/03/2026,1240.5</pre>
+    </div>
+    <div class="pane good">
+      <div class="cap">after.csv</div>
+      <pre>John Smith,john.smith@gmail.com,
+    (416) 555-0182,Toronto,2026-07-03,1240.50</pre>
+    </div>
+  </div>
+
+  <h2>Try it yourself</h2>
+  <div class="dl">
+    <a class="lbtn primary" href="clean_csv.py" download>Download clean_csv.py</a>
+    <a class="lbtn ghost" href="before.csv" download>before.csv</a>
+    <a class="lbtn ghost" href="after.csv" download>after.csv</a>
+    <a class="lbtn ghost" href="README.md" download>README</a>
+  </div>
+  <p class="lead" style="margin-top:18px; font-size:14.5px;">Run: <code style="color:#D9A441;">python3 clean_csv.py before.csv -o after.csv --key email</code> &mdash; Python 3.8+, standard library only.</p>
+
+  <div class="note">
+    <b style="color:var(--ink);">Demo build by AmirWebWorks</b> (Toronto). All names, emails and numbers are generated for this demo. Need this adapted to your QuickBooks / Shopify / CRM export — including merge of several files? Same-day.
+  </div>
+</div>
+</body>
+</html>

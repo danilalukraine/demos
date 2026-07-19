@@ -1,0 +1,8 @@
+clean_csv.py report
+  input:          before.csv
+  output:         after.csv
+  rows in:        25
+  rows out:       17
+  empty dropped:  2
+  dupes dropped:  6 (key: email)
+  cells fixed:    82
