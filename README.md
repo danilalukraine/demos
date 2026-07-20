@@ -1,6 +1,6 @@
 # AmirWebWorks — demo portfolio
 
-**Web • Scripts • AI. Same-day, Toronto.**
+**Web • Scripts • AI. Same-day, Ottawa.**
 
 Live demo builds — real, working, honest. No invented client logos: the
 businesses shown are fictional and every demo is clearly marked as such.
